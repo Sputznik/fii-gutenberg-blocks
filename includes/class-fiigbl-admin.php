@@ -27,6 +27,7 @@ class FIIGBL_ADMIN {
     // ENABLE EDITORS-NOTE BLOCK ONLY ON POSTS
     if ( 'post' != $post->post_type ) {
       unset( $blocks[ 'fiigbl/editors-note' ] );
+      unset( $blocks[ 'fiigbl/fii-also-read' ] );
     }
 
     return array_keys( $blocks ); // RETURN THE NEW LIST OF ALLOWED BLOCKS
@@ -36,7 +37,10 @@ class FIIGBL_ADMIN {
     $blocks = array(
   		'editors-note' => array(
   			'render'	=> true
-  		)
+  		),
+      'fii-also-read' => array(
+        'render'	=> true
+      )
   	);
 
   	foreach ( $blocks as $block => $args ) {
@@ -53,7 +57,7 @@ class FIIGBL_ADMIN {
   function render_callback( $atts, $content, $block  ){
   	$block_name = explode( "/", $block->name )[1];
   	ob_start();
-  	require_once( FIIGBL_PATH . "render-callback/$block_name.php" );
+  	require( FIIGBL_PATH . "render-callback/$block_name.php" );
   	return ob_get_clean();
   }
 

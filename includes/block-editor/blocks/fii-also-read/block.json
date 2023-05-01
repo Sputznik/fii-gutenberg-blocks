@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "fiigbl/fii-also-read",
+	"version": "0.1.0",
+	"title": "FII Also Read",
+	"category": "fii-gutenberg-blocks",
+	"icon": "ellipsis",
+	"description": "FII Also Read Block.",
+	"supports": {
+		"html": false,
+		"multiple": true
+	},
+	"attributes": {
+		"text": {
+			"type": "string"
+		},
+		"url": {
+			"type": "string"
+		}
+	},
+	"textdomain": "fii-guten-blocks",
+	"editorScript": "file:../../../../build/index.js",
+	"editorStyle": "file:../../../../build/index.css",
+	"style": "file:../../../../build/style-index.css"
+}
